@@ -10,8 +10,8 @@
 #define DHTPIN 23    
 #define DHTTYPE DHT11   // DHT 11
  
-#define AWS_IOT_PUBLISH_TOPIC   "esp32/pub"
-#define AWS_IOT_SUBSCRIBE_TOPIC "esp32/sub"
+#define AWS_IOT_PUBLISH_TOPIC   "device/01/data"
+#define AWS_IOT_SUBSCRIBE_TOPIC "device/+/data"
  
 float h ;
 float t;
@@ -64,7 +64,7 @@ void connectAWS()
  
   Serial.println("AWS IoT Connected!");
 }
- 
+
 void publishMessage()
 {
   StaticJsonDocument<200> doc;
